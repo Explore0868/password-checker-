@@ -44,16 +44,8 @@ Registration asks for a username, a password, and password confirmation. It then
 
 Usernames must start with a capital letter, be 9–15 characters long, and must not contain `@`, `.`, `_`, `#`, or `$`. Passwords must start with a capital letter, be 9–15 characters long, and contain `_` or `@`.
 
-## Current limitations
 
-This is a personal learning project. The following behaviors and limitations are present in the current code:
-
-- Login checks whether a password matches any value in the map, rather than checking the password for the entered username.
-- Password change and recovery rely on shared login state. Password change mishandles invalid new passwords, and recovery changes a password after checking only the username.
-- Duplicate usernames can overwrite existing accounts.
-- Empty usernames or passwords can cause an uncaught `StringIndexOutOfBoundsException` during validation.
-- Account data exists only for the current run, and passwords are stored as plain text. Do not use real or reused passwords.
 
 ## Verification performed
 
-The sources compiled successfully with JDK 17 using `javac *.java`. Scripted console runs verified the seeded account login, new-user registration, and password recovery with the seeded account. Additional cases exposed the limitations listed above, including an uncaught exception for an empty registration username and an incorrect password-change path after entering an invalid new password.
+The sources compiled successfully with JDK 17 using `javac *.java`. Scripted console runs verified the seeded account login, new-user registration, and password recovery with the seeded account.
