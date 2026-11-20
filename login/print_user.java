@@ -16,14 +16,20 @@ public class print_user
     { int nof=1;boolean cond=true;
         System.out.print("\nEnter The Previous User Name And PassWord\n");
         while(nof==1){
-        nof=user_name_check.user_Check(input);
+        nof=user_name_check.user_Check(input,main.dic);
         nof=login_check.user_Id_name(user_name_check.user_Name);
+        if(nof==1){
+            System.out.println("\nNot matched with Logined User name");
+        }
         }
         nof=1;
         while(nof==1)
         {
-        nof=user_name_check.password_checker(input);
+        nof=user_name_check.password_checker(input,main.dic);
         nof=login_check.user_Id_password(user_name_check.password);
+        if(nof==1){
+            System.out.println("\nNot matched with Logined Password");
+        }
         }
         String New_user=null, word=user_name_check.user_Name;
         while(cond){
@@ -31,8 +37,10 @@ public class print_user
         New_user=input.nextLine().trim();
         cond=User_check.check(New_user);
         }
+
         main.dic.remove(word);
         main.dic.put(New_user,user_name_check.password);
+        login_check.username = New_user;
         System.out.print("\n Succesfully User Name Changed\n\n");
     }
 }

@@ -10,25 +10,25 @@ public class user_name_check
           System.out.println("\n\tError : user_Name_checkException\n");
         }
     } 
-    public static int  user_Check(Scanner input)
+    public static int  user_Check(Scanner input,Map<String,String> dic)
     {   nof=0;
         System.out.print("\nEnter The User Name -> ");
-        user_Name=input.nextLine();
+        user_Name=input.nextLine().trim();
     
-                if(!main.dic.containsKey(user_Name))
+                if(!dic.containsKey(user_Name))
                 { try{ nof=1;throw new user_Name_checkException();}
                    catch(user_Name_checkException e)
-                   { 
+                   {
                     System.out.print("\t-> No Such User Name Found\n");
                    }
                 }
        return nof;
     } 
-    public static int password_checker(Scanner input)
+    public static int password_checker(Scanner input,Map<String,String> dic)
     { nof=0;
     System.out.print("\nEnter The Password -> ");
-        password=input.nextLine();
-        if(!main.dic.containsValue(password))
+        password=input.nextLine().trim();
+        if(!dic.containsValue(password))
                 {
                     try{nof=1;throw new user_Name_checkException();}
                     catch(user_Name_checkException e)

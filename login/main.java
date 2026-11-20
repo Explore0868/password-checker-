@@ -15,9 +15,12 @@ public class main
     }
    
     public static void main(String[] x)
-    {   String choice,save_no;
+    
+    {   
+        String choice,save_no;
         int num=0,login_c=1;
-        System.out.println("\nType \"Exit\" If You Want To Exit\n");
+        dic.put("Username","Password_123");
+    System.out.println("\nType \"Exit\" If You Want To Exit\n");
         while(true)
         {    nof=0;
             System.out.print("1.Register\n2.Login\n3.Change-PassWord\n4.Forgot-PassWord\n5.User_name Change\n6.print\nEnter Your Choice => ");
@@ -36,18 +39,18 @@ public class main
              switch(num)
              {
                 case 1->
-                {  register.new_user(input);}
+                {  register.new_user(input,dic);}
                 case 2->{
                     if(dic.size()==0) System.out.println("\n\"Zero\" Register's Found\n");
                     else login_c=login_check.logincheck(input);
                 }
                 case 3->{
                     if(login_check.user_login_check(login_c))
-                    password_change.pass_change(input);
+                    password_change.pass_change(input,dic);
                 }
                 case 4->{
                     if(login_check.user_login_check(login_c))
-                    password_forgot.forgot(input);
+                    password_forgot.forgot(input,dic);
                 }
                 case 5->{
                     if(login_check.user_login_check(login_c))

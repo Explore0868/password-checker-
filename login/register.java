@@ -6,7 +6,7 @@ public class register
        {System.out.print("\n\tError : pass_Exception\n");}
      }
     
-    public static void new_user(Scanner input)
+    public static void new_user(Scanner input,Map<String,String> dic)
     {   String user_name=null,p_w=null,re_pw,save_no=null;
        boolean cond=true;int nof=0;
        while(cond){
@@ -48,7 +48,7 @@ public class register
         cond=false;
        }
       if(save_no.equals("save")||save_no.equals("yes"))
-      { main.dic.put(user_name,p_w);
+      { dic.put(user_name,p_w);
         System.out.print("\n    Sussefully registered\n\n");}
       
     }
